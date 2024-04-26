@@ -4,7 +4,7 @@
 <head>
         <link rel="stylesheet" href="{{url_for('static', filename ='css/index.css')}}">
         <link rel="stylesheet" href="static/css/index.css">
-        
+
         <script src="static/js/index.js"></script>
 
         <!--Font Awesome CDN-->
@@ -34,10 +34,11 @@
                                         <div class="name">Hulk</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-1">Tomar Foto</button>
+                                        <button id="capture-btn-1" data-name="Hulk">Tomar Foto</button>
                                         <button id="close-btn-1" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-1" style="display: none;"></canvas>
                                         <video id="video-1" style="display: none;"></video>
+                                        <button id="transform-btn-1">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/Black-Widow.jpg);">
@@ -45,10 +46,11 @@
                                         <div class="name">Black Widow</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-2">Tomar Foto</button>
+                                        <button id="capture-btn-2" data-name="Black Widow">Tomar Foto</button>
                                         <button id="close-btn-2" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-2" style="display: none;"></canvas>
                                         <video id="video-2" style="display: none;"></video>
+                                        <button id="transform-btn-2">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/cap.webp);">
@@ -56,10 +58,11 @@
                                         <div class="name">Captain America</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-3">Tomar Foto</button>
+                                        <button id="capture-btn-3" data-name ="Captain America">Tomar Foto</button>
                                         <button id="close-btn-3" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-3" style="display: none;"></canvas>
                                         <video id="video-3" style="display: none;"></video>
+                                        <button id="transform-btn-3">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/captain.webp);">
@@ -67,10 +70,11 @@
                                         <div class="name">Captain Marvel</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-4">Tomar Foto</button>
+                                        <button id="capture-btn-4" data-name="Captain Marvel">Tomar Foto</button>
                                         <button id="close-btn-4" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-4" style="display: none;"></canvas>
                                         <video id="video-4" style="display: none;"></video>
+                                        <button id="transform-btn-4">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/hawkeye.jpg);">
@@ -78,10 +82,11 @@
                                         <div class="name">Hawkeye</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-5">Tomar Foto</button>
+                                        <button id="capture-btn-5" data-name="Hawkeye">Tomar Foto</button>
                                         <button id="close-btn-5" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-5" style="display: none;"></canvas>
                                         <video id="video-5" style="display: none;"></video>
+                                        <button id="transform-btn-5">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/scarlet.jpg);">
@@ -89,13 +94,14 @@
                                         <div class="name">Scarlet Witch</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-6">Tomar Foto</button>
+                                        <button id="capture-btn-6" data-name="Scarlet Width">Tomar Foto</button>
                                         <button id="close-btn-6" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-6" style="display: none;"></canvas>
                                         <video id="video-6" style="display: none;"></video>
+                                        <button id="transform-btn-6">Transformar</button>
                                 </div>
                         </div>
-                
+
                 </div>
 
                 <div class="button">
@@ -106,82 +112,118 @@
 
         </div>
         <script>
-       for (let i = 1; i <= 6; i++) {
-                const captureBtn = document.getElementById(`capture-btn-${i}`);
-                const closeBtn = document.getElementById(`close-btn-${i}`);
-                const canvas = document.getElementById(`canvas-${i}`);
-                const video = document.getElementById(`video-${i}`);
-                const ctx = canvas.getContext('2d');
-                const messageElement = document.getElementById('message');
+                for (let i = 1; i <= 6; i++) {
+                        const captureBtn = document.getElementById(`capture-btn-${i}`);
+                        const closeBtn = document.getElementById(`close-btn-${i}`);
+                        const canvas = document.getElementById(`canvas-${i}`);
+                        const video = document.getElementById(`video-${i}`);
+                        const ctx = canvas.getContext('2d');
+                        const messageElement = document.getElementById('message');
 
-                captureBtn.addEventListener('click', () => {
-                        const constraints = { video: true };
+                        captureBtn.addEventListener('click', () => {
+                                const constraints = { video: true };
 
-                        navigator.mediaDevices.getUserMedia(constraints)
-                                .then(stream => {
-                                        video.srcObject = stream;
-                                        video.play();
+                                navigator.mediaDevices.getUserMedia(constraints)
+                                        .then(stream => {
+                                                video.srcObject = stream;
+                                                video.play();
 
-                                        video.addEventListener('loadedmetadata', () => {
-                                                canvas.width = video.videoWidth;
-                                                canvas.height = video.videoHeight;
-                                        });
+                                                video.addEventListener('loadedmetadata', () => {
+                                                        canvas.width = video.videoWidth;
+                                                        canvas.height = video.videoHeight;
+                                                });
 
-                                        captureBtn.addEventListener('click', () => {
-                                                // Draw the current frame of the video onto the canvas
-                                                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                                                captureBtn.addEventListener('click', () => {
+                                                        // Draw the current frame of the video onto the canvas
+                                                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-                                                // Convert the canvas image to base64
-                                                const imageData = canvas.toDataURL('image/png');
-                                                const formData = new FormData();
-                                                formData.append('image', imageData);
+                                                        // Convert the canvas image to base64
+                                                        const imageData = canvas.toDataURL('image/png');
+                                                        const formData = new FormData();
+                                                        formData.append('image', imageData);
+                                                        formData.append('button_number', i);
 
-                                                // Upload the image data
-                                                fetch('/upload', {
-                                                        method: 'POST',
-                                                        body: formData
-                                                })
-                                                        .then(response => {
-                                                                if (!response.ok) {
-                                                                        throw new Error('Network response was not ok');
-                                                                }
-                                                                return response.json();
+                                                        // Upload the image data
+                                                        fetch('/upload', {
+                                                                method: 'POST',
+                                                                body: formData
                                                         })
-                                                        .then(data => {
-                                                                console.log('Image uploaded successfully', data);
-                                                                // Show a success message
-                                                                messageElement.textContent = 'Foto tomada exitosamente!';
-                                                                // Stop the video stream and hide the video element
-                                                                stream.getTracks().forEach(track => track.stop());
-                                                                video.srcObject = null;
-                                                                video.style.display = 'none';
-                                                                canvas.style.display = 'none';
-                                                                closeBtn.style.display = 'none';
-                                                        })
-                                                        .catch(error => {
-                                                                console.error('There was a problem with your fetch operation:', error);
-                                                        });
-                                        });
+                                                                .then(response => {
+                                                                        if (!response.ok) {
+                                                                                throw new Error('Network response was not ok');
+                                                                        }
+                                                                        return response.json();
+                                                                })
+                                                                .then(data => {
+                                                                        console.log('Image uploaded successfully', data);
+                                                                        // Show a success message
+                                                                        messageElement.textContent = 'Foto tomada exitosamente!';
+                                                                        // Stop the video stream and hide the video element
+                                                                        stream.getTracks().forEach(track => track.stop());
+                                                                        video.srcObject = null;
+                                                                        video.style.display = 'none';
+                                                                        canvas.style.display = 'none';
+                                                                        closeBtn.style.display = 'none';
+                                                                })
+                                                                .catch(error => {
+                                                                        console.error('There was a problem with your fetch operation:', error);
+                                                                });
+                                                });
 
-                                        closeBtn.addEventListener('click', () => {
-                                                // Stop the video stream and hide the video element
-                                                stream.getTracks().forEach(track => track.stop());
-                                                video.srcObject = null;
-                                                video.style.display = 'none';
+                                                closeBtn.addEventListener('click', () => {
+                                                        // Stop the video stream and hide the video element
+                                                        stream.getTracks().forEach(track => track.stop());
+                                                        video.srcObject = null;
+                                                        video.style.display = 'none';
+                                                        canvas.style.display = 'none';
+                                                        closeBtn.style.display = 'none';
+                                                });
+
+                                                // Show the video element and hide the canvas
+                                                video.style.display = 'block';
                                                 canvas.style.display = 'none';
-                                                closeBtn.style.display = 'none';
+                                                closeBtn.style.display = 'block';
+                                        })
+                                        .catch(error => {
+                                                console.error('Error accessing the camera:', error);
                                         });
+                        });
+                }
 
-                                        // Show the video element and hide the canvas
-                                        video.style.display = 'block';
-                                        canvas.style.display = 'none';
-                                        closeBtn.style.display = 'block';
-                                })
-                                .catch(error => {
-                                        console.error('Error accessing the camera:', error);
+        </script>
+        <script>
+                // Agregar evento al botón de transformación de cada superhéroe
+                        for (let i = 1; i <= 6; i++) {
+                                const transformBtn = document.getElementById(`transform-btn-${i}`);
+                                const characterName = transformBtn.getAttribute('data-name');
+                                const characterVideo = transformBtn.getAttribute('data-video');
+
+                                transformBtn.addEventListener('click', () => {
+                                        // Ejecutar el comando de transformación
+                                        const command = `%cd "/content/roop" && python run.py -s "${characterName}.png" -t "${characterVideo}" -o "resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
+                                        fetch('/transform', {
+                                                method: 'POST',
+                                                body: JSON.stringify({ command: command }),
+                                                headers: {
+                                                        'Content-Type': 'application/json'
+                                                }
+                                        })
+                                                .then(response => {
+                                                        if (!response.ok) {
+                                                                throw new Error('Network response was not ok');
+                                                        }
+                                                        return response.json();
+                                                })
+                                                .then(data => {
+                                                        console.log('Transformation completed', data);
+                                                        // Mostrar un mensaje de éxito
+                                                        messageElement.textContent = 'Transformación completada!';
+                                                })
+                                                .catch(error => {
+                                                        console.error('There was a problem with your fetch operation:', error);
+                                                });
                                 });
-                });
-        }
+                        }
 
         </script>
 </body>
