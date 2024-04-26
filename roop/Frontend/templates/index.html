@@ -200,7 +200,7 @@
 
                                 transformBtn.addEventListener('click', () => {
                                         // Ejecutar el comando de transformación
-                                        const command = `%cd "/content/roop" && python run.py -s "${characterName}.png" -t "${characterVideo}" -o "resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
+                                        const command = `%cd "/content/roop" && python run.py -s "/content/roop/images/${characterName}.png" -t "/content/roop/videos/${characterVideo}" -o "resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
                                         fetch('/transform', {
                                                 method: 'POST',
                                                 body: JSON.stringify({ command: command }),
