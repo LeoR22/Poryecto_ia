@@ -23,7 +23,18 @@
                         </div>
                 </header>
         </div>
+        <div id="message" style="display: none;"></div>
 
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flash-messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
         <div class="container">
 
                 <div class="slide">
@@ -94,11 +105,12 @@
                                         <div class="name">Scarlet Witch</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-6" data-name="Scarlet Width">Tomar Foto</button>
+                                        <button id="capture-btn-6" data-name="Scarlet Witch">Tomar Foto</button>
                                         <button id="close-btn-6" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-6" style="display: none;"></canvas>
                                         <video id="video-6" style="display: none;"></video>
                                         <button id="transform-btn-6">Transformar</button>
+                                        
                                 </div>
                         </div>
 
@@ -108,11 +120,11 @@
                         <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
                         <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
-                <div id="message"></div>
-
+              
         </div>
+
         <script>
-                for (let i = 1; i <= 6; i++) {
+        for (let i = 1; i <= 6; i++) {
                         const captureBtn = document.getElementById(`capture-btn-${i}`);
                         const closeBtn = document.getElementById(`close-btn-${i}`);
                         const canvas = document.getElementById(`canvas-${i}`);
@@ -157,7 +169,8 @@
                                                                 .then(data => {
                                                                         console.log('Image uploaded successfully', data);
                                                                         // Show a success message
-                                                                        messageElement.textContent = 'Foto tomada exitosamente!';
+                                                                        messageElement.textContent = data.message;
+                                                                        messageElement.style.display = 'block'; // Mostrar el mensaje de éxito
                                                                         // Stop the video stream and hide the video element
                                                                         stream.getTracks().forEach(track => track.stop());
                                                                         video.srcObject = null;
@@ -168,6 +181,7 @@
                                                                 .catch(error => {
                                                                         console.error('There was a problem with your fetch operation:', error);
                                                                 });
+
                                                 });
 
                                                 closeBtn.addEventListener('click', () => {
@@ -192,38 +206,38 @@
 
         </script>
         <script>
-                // Agregar evento al botón de transformación de cada superhéroe
-                        for (let i = 1; i <= 6; i++) {
-                                const transformBtn = document.getElementById(`transform-btn-${i}`);
-                                const characterName = transformBtn.getAttribute('data-name');
-                                const characterVideo = transformBtn.getAttribute('data-video');
+        for (let i = 1; i <= 6; i++) {
+                        const transformBtn = document.getElementById(`transform-btn-${i}`);
+                        const characterName = transformBtn.getAttribute('data-name');
+                        const characterVideo = transformBtn.getAttribute('data-video');
 
-                                transformBtn.addEventListener('click', () => {
-                                        // Ejecutar el comando de transformación
-                                        const command = `%cd "/content/roop" && python run.py -s "/content/roop/images/${characterName}.png" -t "/content/roop/videos/${characterVideo}" -o "resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
-                                        fetch('/transform', {
-                                                method: 'POST',
-                                                body: JSON.stringify({ command: command }),
-                                                headers: {
-                                                        'Content-Type': 'application/json'
+                        transformBtn.addEventListener('click', () => {
+                                // Ejecutar el comando de transformación
+                                const command = `%cd "/content/Proyecto_ia" && python run.py -s "/content/Proyecto_ia/roop/images/${characterName}.png" -t "/content/Proyecto_ia/roop/videos/${characterVideo}" -o "resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
+                                fetch('/transform', {
+                                        method: 'POST',
+                                        body: JSON.stringify({ command: command }),
+                                        headers: {
+                                                'Content-Type': 'application/json'
+                                        }
+                                })
+                                        .then(response => {
+                                                if (!response.ok) {
+                                                        throw new Error('Network response was not ok');
                                                 }
+                                                return response.json();
                                         })
-                                                .then(response => {
-                                                        if (!response.ok) {
-                                                                throw new Error('Network response was not ok');
-                                                        }
-                                                        return response.json();
-                                                })
-                                                .then(data => {
-                                                        console.log('Transformation completed', data);
-                                                        // Mostrar un mensaje de éxito
-                                                        messageElement.textContent = 'Transformación completada!';
-                                                })
-                                                .catch(error => {
-                                                        console.error('There was a problem with your fetch operation:', error);
-                                                });
-                                });
-                        }
+                                        .then(data => {
+                                                console.log('Transformation completed', data);
+                                                // Mostrar un mensaje de éxito
+                                                messageElement.textContent = 'Transformación completada!';
+                                        })
+                                        .catch(error => {
+                                                console.error('There was a problem with your fetch operation:', error);
+                                        });
+                        });
+                }
+
 
         </script>
 </body>
