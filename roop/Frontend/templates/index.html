@@ -40,28 +40,28 @@
                 <div class="slide">
 
 
-                        <div class="item" style="background-image: url(static/images/hulk.jpg);">
+                        <div class="item" style="background-image: url(static/images/doctor.webp);">
                                 <div class="content">
-                                        <div class="name">Hulk</div>
+                                        <div class="name">Doctor Strange</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-1" data-name="Hulk">Tomar Foto</button>
+                                        <button id="capture-btn-1" data-name="Doctor_Strange">Tomar Foto</button>
                                         <button id="close-btn-1" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-1" style="display: none;"></canvas>
                                         <video id="video-1" style="display: none;"></video>
-                                        <button id="transform-btn-1">Transformar</button>
+                                        <button id="transform-btn-1" data-name="Doctor_Strange" data-video="Doctor_Strange.mp4">Transformar</button>
                                 </div>
                         </div>
-                        <div class="item" style="background-image: url(static/images/Black-Widow.jpg);">
+                        <div class="item" style="background-image: url(static/images/Wanda.webp);">
                                 <div class="content">
-                                        <div class="name">Black Widow</div>
+                                        <div class="name">Wanda</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-2" data-name="Black Widow">Tomar Foto</button>
+                                        <button id="capture-btn-2" data-name="Wanda">Tomar Foto</button>
                                         <button id="close-btn-2" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-2" style="display: none;"></canvas>
                                         <video id="video-2" style="display: none;"></video>
-                                        <button id="transform-btn-2">Transformar</button>
+                                        <button id="transform-btn-2" data-name="Wanda" data-video="Wanda.mp4">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/cap.webp);">
@@ -69,11 +69,11 @@
                                         <div class="name">Captain America</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-3" data-name ="Captain America">Tomar Foto</button>
+                                        <button id="capture-btn-3" data-name ="Captain_America">Tomar Foto</button>
                                         <button id="close-btn-3" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-3" style="display: none;"></canvas>
                                         <video id="video-3" style="display: none;"></video>
-                                        <button id="transform-btn-3">Transformar</button>
+                                        <button id="transform-btn-3" data-name="Captain_America" data-video="Captain_America.mp4">Transformar</button>
                                 </div>
                         </div>
                         <div class="item" style="background-image: url(static/images/captain.webp);">
@@ -81,36 +81,35 @@
                                         <div class="name">Captain Marvel</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-4" data-name="Captain Marvel">Tomar Foto</button>
+                                        <button id="capture-btn-4" data-name="Captain_Marvel">Tomar Foto</button>
                                         <button id="close-btn-4" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-4" style="display: none;"></canvas>
                                         <video id="video-4" style="display: none;"></video>
-                                        <button id="transform-btn-4">Transformar</button>
+                                        <button id="transform-btn-4" data-name="Captain_Marvel" data-video="Captain_Marvel.mp4">Transformar</button>
                                 </div>
                         </div>
-                        <div class="item" style="background-image: url(static/images/hawkeye.jpg);">
+                        <div class="item" style="background-image: url(static/images/Spiderman.webp);">
                                 <div class="content">
-                                        <div class="name">Hawkeye</div>
+                                        <div class="name">Spiderman</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-5" data-name="Hawkeye">Tomar Foto</button>
+                                        <button id="capture-btn-5" data-name="Spiderman">Tomar Foto</button>
                                         <button id="close-btn-5" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-5" style="display: none;"></canvas>
                                         <video id="video-5" style="display: none;"></video>
-                                        <button id="transform-btn-5">Transformar</button>
+                                        <button id="transform-btn-5" data-name="Spiderman" data-video="Spiderman.mp4">Transformar</button>
                                 </div>
                         </div>
-                        <div class="item" style="background-image: url(static/images/scarlet.jpg);">
+                        <div class="item" style="background-image: url(static/images/mujer-maravilla.webp);">
                                 <div class="content">
-                                        <div class="name">Scarlet Witch</div>
+                                        <div class="name">Wonder Woman</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-6" data-name="Scarlet Witch">Tomar Foto</button>
+                                        <button id="capture-btn-6" data-name="Wonder_Woman">Tomar Foto</button>
                                         <button id="close-btn-6" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-6" style="display: none;"></canvas>
                                         <video id="video-6" style="display: none;"></video>
-                                        <button id="transform-btn-6">Transformar</button>
-                                        
+                                        <button id="transform-btn-6" data-name="Wonder_Woman" data-video="Wonder_Woman.mp4">Transformar</button>
                                 </div>
                         </div>
 
@@ -213,7 +212,7 @@
 
                         transformBtn.addEventListener('click', () => {
                                 // Ejecutar el comando de transformación
-                                const command = `%cd "/content/Proyecto_ia" && python run.py -s "/content/Proyecto_ia/roop/images/${characterName}.png" -t "/content/Proyecto_ia/roop/videos/${characterVideo}" -o "resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
+                                const command = `cd "/content/Proyecto_ia" && python run.py -s "/content/Proyecto_ia/roop/images/${characterName}.png" -t "/content/Proyecto_ia/roop/videos/${characterVideo}.mp4" -o "resultados/resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
                                 fetch('/transform', {
                                         method: 'POST',
                                         body: JSON.stringify({ command: command }),

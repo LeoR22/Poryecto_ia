@@ -26,16 +26,16 @@ def upload():
 
     # Guardar la imagen en una carpeta específica con el nombre del personaje
     character_name = {
-        1: 'Hulk',
-        2: 'Black Widow',
-        3: 'Captain America',
-        4: 'Captain Marvel',
-        5: 'Hawkeye',
-        6: 'Scarlet Witch'
+        1: 'Doctor_Strange',
+        2: 'Wanda',
+        3: 'Captain_America', 
+        4: 'Captain_Marvel',
+        5: 'Spiderman',
+        6: 'Wonder_Woman'
     }.get(button_number, 'Unknown')
 
     img_name = f"{character_name}.png"
-    img_path = os.path.join('roop/images/', img_name)
+    img_path = os.path.join('/content/Proyecto_ia/roop/images/', img_name)
     with open(img_path, 'wb') as img_file:
         img_file.write(img_bytes)
     flash(f"Imagen guardada correctamente", "success")
