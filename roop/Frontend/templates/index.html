@@ -37,7 +37,7 @@
         </ul>
         {% endif %}
         {% endwith %}
-        
+
         <div class="container">
 
                 <div class="slide">
@@ -52,7 +52,8 @@
                                         <button id="close-btn-1" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-1" style="display: none;"></canvas>
                                         <video id="video-1" style="display: none;"></video>
-                                        <button id="transform-btn-1" data-name="Doctor_Strange" data-video="Doctor_Strange.mp4">Transformar</button>
+                                        <button id="transform-btn-1" data-name="Doctor_Strange"
+                                                data-video="Doctor_Strange.mp4">Transformar</button>
                                         <button id="download-btn">Descargar</button>
                                 </div>
                         </div>
@@ -65,7 +66,8 @@
                                         <button id="close-btn-2" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-2" style="display: none;"></canvas>
                                         <video id="video-2" style="display: none;"></video>
-                                        <button id="transform-btn-2" data-name="Wanda" data-video="Wanda.mp4">Transformar</button>
+                                        <button id="transform-btn-2" data-name="Wanda"
+                                                data-video="Wanda.mp4">Transformar</button>
                                         <button id="download-btn">Descargar</button>
                                 </div>
                         </div>
@@ -74,11 +76,12 @@
                                         <div class="name">Captain America</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-3" data-name ="Captain_America">Tomar Foto</button>
+                                        <button id="capture-btn-3" data-name="Captain_America">Tomar Foto</button>
                                         <button id="close-btn-3" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-3" style="display: none;"></canvas>
                                         <video id="video-3" style="display: none;"></video>
-                                        <button id="transform-btn-3" data-name="Captain_America" data-video="Captain_America.mp4">Transformar</button>
+                                        <button id="transform-btn-3" data-name="Captain_America"
+                                                data-video="Captain_America.mp4">Transformar</button>
                                         <button id="download-btn">Descargar</button>
                                 </div>
                         </div>
@@ -91,20 +94,22 @@
                                         <button id="close-btn-4" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-4" style="display: none;"></canvas>
                                         <video id="video-4" style="display: none;"></video>
-                                        <button id="transform-btn-4" data-name="Captain_Marvel" data-video="Captain_Marvel.mp4">Transformar</button>
+                                        <button id="transform-btn-4" data-name="Captain_Marvel"
+                                                data-video="Captain_Marvel.mp4">Transformar</button>
                                         <button id="download-btn">Descargar</button>
                                 </div>
                         </div>
-                        <div class="item" style="background-image: url(static/images/Spiderman.webp);">
+                        <div class="item" style="background-image: url(static/images/aquaman.jpg);">
                                 <div class="content">
-                                        <div class="name">Spiderman</div>
+                                        <div class="name">Aquaman</div>
                                         <div class="des">¿Que tanto te pareces a tu superheroe favorito?
                                         </div>
-                                        <button id="capture-btn-5" data-name="Spiderman">Tomar Foto</button>
+                                        <button id="capture-btn-5" data-name="Aquaman">Tomar Foto</button>
                                         <button id="close-btn-5" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-5" style="display: none;"></canvas>
                                         <video id="video-5" style="display: none;"></video>
-                                        <button id="transform-btn-5" data-name="Spiderman" data-video="Spiderman.mp4">Transformar</button>
+                                        <button id="transform-btn-5" data-name="Aquaman"
+                                                data-video="Aquaman.mp4">Transformar</button>
                                         <button id="download-btn">Descargar</button>
                                 </div>
                         </div>
@@ -117,7 +122,8 @@
                                         <button id="close-btn-6" style="display: none;">Cerrar</button>
                                         <canvas id="canvas-6" style="display: none;"></canvas>
                                         <video id="video-6" style="display: none;"></video>
-                                        <button id="transform-btn-6" data-name="Wonder_Woman" data-video="Wonder_Woman.mp4">Transformar</button>
+                                        <button id="transform-btn-6" data-name="Wonder_Woman"
+                                                data-video="Wonder_Woman.mp4">Transformar</button>
                                         <button id="download-btn">Descargar</button>
                                 </div>
                         </div>
@@ -128,11 +134,11 @@
                         <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
                         <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
-              
+
         </div>
 
         <script>
-        for (let i = 1; i <= 6; i++) {
+                for (let i = 1; i <= 6; i++) {
                         const captureBtn = document.getElementById(`capture-btn-${i}`);
                         const closeBtn = document.getElementById(`close-btn-${i}`);
                         const canvas = document.getElementById(`canvas-${i}`);
@@ -214,14 +220,14 @@
 
         </script>
         <script>
-        for (let i = 1; i <= 6; i++) {
+                for (let i = 1; i <= 6; i++) {
                         const transformBtn = document.getElementById(`transform-btn-${i}`);
                         const characterName = transformBtn.getAttribute('data-name');
                         const characterVideo = transformBtn.getAttribute('data-video');
 
                         transformBtn.addEventListener('click', () => {
                                 // Ejecutar el comando de transformación
-                                const command = `cd "/content/Proyecto_ia" && python run.py -s "/content/Proyecto_ia/images/${characterName}.png" -t "/content/Proyecto_ia/videos/${characterVideo}.mp4" -o "resultados/resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
+                                const command = `cd "/content/Proyecto_ia" && python run.py -s "/content/Proyecto_ia/images/${characterName}.png" -t "/content/Proyecto_ia/videos/${characterName}.mp4" -o "/content/Proyecto_ia/resultados/resultado.mp4" --keep-frames --keep-fps --temp-frame-quality 1 --output-video-quality 1 --execution-provider cuda --frame-processor face_swapper face_enhancer`;
                                 fetch('/transform', {
                                         method: 'POST',
                                         body: JSON.stringify({ command: command }),

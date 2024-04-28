@@ -55,7 +55,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, f
 
 @app.route('/download')
 def download():
-    file_path = '/content/Proyecto_ia/roop/resultados/resultado.mp4'
+    file_path = '/content/Proyecto_ia/resultados/resultado.mp4'
     return send_file(file_path, as_attachment=True)
 
 
