@@ -1,5 +1,5 @@
 ## Sobre este proyecto
-
+![](https://github.com/LeoR22/Proyecto_ia/blob/main/projec_ia.jpg)
 
 # Roop
 
