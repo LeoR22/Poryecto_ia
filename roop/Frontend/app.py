@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, send_file
 import os
 import base64
 import secrets
@@ -35,7 +35,7 @@ def upload():
     }.get(button_number, 'Unknown')
 
     img_name = f"{character_name}.png"
-    img_path = os.path.join('/content/Proyecto_ia/roop/images/', img_name)
+    img_path = os.path.join('/content/Proyecto_ia/images/', img_name)
     with open(img_path, 'wb') as img_file:
         img_file.write(img_bytes)
     flash(f"Imagen guardada correctamente", "success")
@@ -49,6 +49,14 @@ def transform():
         os.system(command)
         return jsonify({'message': 'Transformación completada'})
     return jsonify({'message': 'Error: comando de transformación no proporcionado'}), 400
+
+
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, send_file
+
+@app.route('/download')
+def download():
+    file_path = '/content/Proyecto_ia/roop/resultados/resultado.mp4'
+    return send_file(file_path, as_attachment=True)
 
 
 if __name__ == '__main__':
