@@ -30,7 +30,7 @@ def upload():
         2: 'Wanda',
         3: 'Captain_America', 
         4: 'Captain_Marvel',
-        5: 'Spiderman',
+        5: 'Aquaman',
         6: 'Wonder_Woman'
     }.get(button_number, 'Unknown')
 
