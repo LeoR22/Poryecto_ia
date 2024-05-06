@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, send_file
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash, send_file, send_from_directory
 import os
 import base64
 import secrets
@@ -55,9 +55,11 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, f
 
 @app.route('/download')
 def download():
-    file_path = '/content/Proyecto_ia/resultados/resultado.mp4'
-    return send_file(file_path, as_attachment=True)
-
+    #file_path = '/content/Proyecto_ia/resultados/resultado.mp4'
+    #return send_file(file_path, as_attachment=True)
+    file_directory = '/content/Proyecto_ia/resultados/'
+    filename = 'resultado.mp4'
+    return send_from_directory(directory=file_directory, path=filename, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
