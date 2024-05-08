@@ -18,7 +18,7 @@ Puede encontrar el manual Aqui:
 
 Tenga en cuenta que la instalación requiere conocimientos técnicos y no es para principiantes. No abra problemas relacionados con la plataforma y la instalación en GitHub.
 Por favor, siga las instrucciones detalladas en el manual para garantizar una instalación adecuada. Si encuentra problemas relacionados con la plataforma o la instalación, consulte el manual.
-![](https://github.com/LeoR22/Proyecto_ia/blob/main/Proyecto_IA_Universidad_V_Final.ipynb)
+[Proyecto Colab Pynb](https://github.com/LeoR22/Proyecto_ia/blob/main/Proyecto_IA_Universidad_V_Final.ipynb)
 
 
 ## Uso
