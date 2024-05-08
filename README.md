@@ -8,10 +8,17 @@
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/s0md3v/roop/ci.yml.svg?branch=main)](https://github.com/s0md3v/roop/actions?query=workflow:ci)
 
+## Manual
+
+Este proyecto incluye un manual detallado que proporciona instrucciones paso a paso sobre cómo utilizar el software de manera efectiva. 
+El manual abarca desde la instalación hasta la implementación de las funciones principales del software. 
+Puede encontrar el manual Aqui: 
+
 ## Instalación
 
-Tenga en cuenta que la instalación requiere conocimientos técnicos y no es para principiantes. No abra problemas relacionados con la plataforma y la instalación en GitHub..
-
+Tenga en cuenta que la instalación requiere conocimientos técnicos y no es para principiantes. No abra problemas relacionados con la plataforma y la instalación en GitHub.
+Por favor, siga las instrucciones detalladas en el manual para garantizar una instalación adecuada. Si encuentra problemas relacionados con la plataforma o la instalación, consulte el manual.
+![](https://github.com/LeoR22/Proyecto_ia/blob/main/Proyecto_IA_Universidad_V_Final.ipynb)
 
 
 ## Uso
@@ -49,13 +56,21 @@ python run.py [options]
 El uso del `-s/--source`, `-t/--target` y el  `-o/--output` argumento ejecutará el programa en modo sin headless.
 
 
-## Descargo de responsabilidad
+## Proyecto de Generación de Medios con Inteligencia Artificial
 
-Este software está diseñado para contribuir positivamente a la industria de los medios generados por IA, ayudando a los artistas con tareas como animación de personajes y modelos de ropa.
+Este proyecto tiene como objetivo principal contribuir positivamente a la industria de los medios generados por inteligencia artificial (IA), ofreciendo herramientas educativas para artistas y diseñadores. 
+Nuestro software está diseñado específicamente para ayudar en tareas como la animación de personajes y modelos de ropa, brindando a los usuarios la oportunidad de explorar y aprender sobre las capacidades creativas de la IA.
 
-Somos conscientes de los posibles problemas éticos y hemos implementado medidas para evitar que el software se utilice para contenido inapropiado, como desnudos.
+## Ética y Responsabilidad
 
-Se espera que los usuarios sigan las leyes locales y utilicen el software de manera responsable. Si usa caras reales, obtenga el consentimiento y etiquete claramente los deepfakes cuando los comparta. Los desarrolladores no son responsables de las acciones de los usuarios.
+Estamos comprometidos con la ética en el uso de la IA y hemos implementado medidas para garantizar que nuestro software no se utilice para crear contenido inapropiado, como desnudos. 
+Es fundamental que los usuarios sigan las leyes locales y utilicen el software de manera responsable. En caso de utilizar imágenes reales, se requiere obtener el consentimiento y etiquetar claramente cualquier resultado generado por el software.
+
+## Nota Legal
+
+Este proyecto es parte de un trabajo académico y tiene un enfoque educativo. Los desarrolladores no son responsables del uso indebido del software ni de las acciones de los usuarios. 
+Se espera que todos los usuarios respeten las normas éticas y legales al utilizar este software.
+¡Gracias por ser parte de nuestro proyecto educativo en IA!
 
 
 ## Licencias
