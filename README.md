@@ -14,6 +14,8 @@ Este proyecto incluye un manual detallado que proporciona instrucciones paso a p
 El manual abarca desde la instalación hasta la implementación de las funciones principales del software. 
 Puede encontrar el manual Aqui: 
 
+[Descargar Manual del Proyecto](https://github.com/LeoR22/Proyecto_ia/blob/main/Proyecto_IA_Universidad_V_Final.ipynb)
+
 ## Instalación
 
 Tenga en cuenta que la instalación requiere conocimientos técnicos y no es para principiantes. No abra problemas relacionados con la plataforma y la instalación en GitHub.
@@ -60,7 +62,7 @@ El uso del `-s/--source`, `-t/--target` y el  `-o/--output` argumento ejecutará
 
 ## Proyecto de Generación de Medios con Inteligencia Artificial
 
-Este proyecto tiene como objetivo principal contribuir positivamente a la industria de los medios generados por inteligencia artificial (IA), ofreciendo herramientas educativas para artistas y diseñadores. 
+Este proyecto es parte de un trabajo académico tiene como objetivo principal contribuir positivamente a la industria de los medios generados por inteligencia artificial (IA), ofreciendo herramientas educativas para artistas y diseñadores. 
 Nuestro software está diseñado específicamente para ayudar en tareas como la animación de personajes y modelos de ropa, brindando a los usuarios la oportunidad de explorar y aprender sobre las capacidades creativas de la IA.
 
 ## Ética y Responsabilidad
