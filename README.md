@@ -14,7 +14,7 @@ Este proyecto incluye un manual detallado que proporciona instrucciones paso a p
 El manual abarca desde la instalación hasta la implementación de las funciones principales del software. 
 Puede encontrar el manual Aqui: 
 
-[Descargar Manual del Proyecto](https://github.com/LeoR22/Proyecto_ia/blob/main/Proyecto_IA_Universidad_V_Final.ipynb)
+[Descargar Manual del Proyecto](https://github.com/LeoR22/Proyecto_ia/blob/main/Manual.docx)
 
 ## Instalación
 
